@@ -23,3 +23,20 @@ export interface IFilter {
     search: string | null;
     pricing: PricingOption[] | null
 }
+
+export interface DropdownOption {
+  value: string;
+  label: string;
+}
+
+export interface CustomDropdownProps {
+  placeholder?: string;
+}
+
+export const sortAscending = <T>(arr: T[]): T[] => {
+  return [...arr].sort((a, b) => (a as any) - (b as any)); // Type assertion for generic comparison
+};
+
+export const sortDescending = <T>(arr: T[]): T[] => {
+  return [...arr].sort((a, b) => (b as any) - (a as any)); // Type assertion for generic comparison
+};

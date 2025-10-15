@@ -1,0 +1,35 @@
+.dropdown-header {
+    color: white;
+    padding: 6px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid #fff;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.custom-dropdown{
+    position: relative;
+    margin: 20px 0;
+    width: max-content;
+}
+ul.dropdown-list {
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    top: 100%;
+    width: 100%;
+    right: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.dropdown-list li{
+    padding: 5px 10px;
+    text-align: left;
+
+}
+.sort-section{
+    display: flex;
+    justify-content: flex-end;
+}
