@@ -48,9 +48,12 @@ function App() {
       setRawData(resJson);
       const url = new URL(window.location.href);
       const filter = url.searchParams.get("filter");
+      const parsedFilter = JSON.parse(filter ?? "{}");
+      
       try {
-        const parsedFilter = JSON.parse(filter ?? "{}");
-        if (Object.keys(parsedFilter).length > 0) {
+        // if (Object.keys(parsedFilter).length > 0) {
+        if(parsedFilter?.search!='' && parsedFilter?.pricing?.length > 0){
+          console.log("inside params")
           setFilter(parsedFilter);
         } else {
           populateData(resJson);
@@ -64,8 +67,10 @@ function App() {
   return (
     <div>
       <Header />
-      <Filter />
-      <CardsList cardData={cardData} />
+      <div className="body-section">
+        <Filter />
+        <CardsList cardData={cardData} />
+      </div>
     </div>
   );
 }

@@ -1,9 +1,18 @@
 import { ICardItem } from "../../../types";
-import "./CardItem.css"
+import "./CardItem.css";
+
 type TCardItemProps = {
     data: ICardItem
 }
 function CardItem({data}: TCardItemProps) {
+    let pricingText: any = "";
+    if (data.pricingOption === 1) {
+        pricingText = "Free";
+    } else if(data.pricingOption === 2) {
+        pricingText = "View onlly";
+    } else {
+        pricingText = `$${data.price}`;
+    }
   return (
     <>
        <div className="cardItem">
@@ -16,7 +25,7 @@ function CardItem({data}: TCardItemProps) {
                     <p>{data.creator}</p>
                 </div>
                 <div className="price">
-                    IN{data.price}
+                    {pricingText}
                 </div>
             </div>
        </div>

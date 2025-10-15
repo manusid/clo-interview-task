@@ -1,0 +1,75 @@
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  background: #0f0f14;
+  padding: 0 20px;
+  min-height: 66px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #0f0f14;
+  margin-top: 30px;
+}
+.filter-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0 6px;
+}
+.search-container {
+  padding: 10px 6px;
+  background-color: #1e1e23;
+  box-shadow: 0 0 5px #000;
+}
+.search {
+  width: 100%;
+  background-color: #1e1e23;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  padding: 10px;
+  color: #a3a3a3;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  color: #a3a3a3;
+}
+
+.filter-container .filter-list input[type="checkbox"] {
+  accent-color: #a3a3a3;
+  cursor: pointer;
+}
+
+input[type=checkbox]::before {
+  content: " ";
+  background-color: #a3a3a3;
+  
+}
+
+button.reset {
+    background: no-repeat;
+    border: none;
+    color: #a3a3a3;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+@media (max-width:480px) {
+  .filter-container {
+    padding: 20px;
+    display: block;
+  }
+  .filter-section{
+    display: block;
+  }
+  .filter-section .filter-list{
+    padding-left: 0;
+    display: block;
+  }
+  .filter-section .filter-list li{
+    margin-bottom: 10px;
+  }
+  .filter-container .filter-list input[type="checkbox"]{
+    margin-left: 0;
+  }
+}
